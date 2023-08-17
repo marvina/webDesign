@@ -5,7 +5,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style type="text/css">
-  * {
+  
+* {
   box-sizing: border-box;
 }
 
@@ -43,27 +44,21 @@ body {
   color: black;
 }
 
-/* 列容器 */
-.row {  
-  display: flex;
+
+.row {
+  display: grid; /* 使用 Grid 布局 */
+  grid-template-areas: "side main main";/* 定义网格 */
+  gap: 20px; /* 列之间的间距 */
 }
 
-/* 创建并排的非等列 */
-/* 侧栏 / 左侧列 */
-.side {
-  flex-grow: 1;
-  flex-basis: 200px;
-  background-color: #f1f1f1;
-  padding: 20px;
+.side{
+grid-area: side;/* 设定区域名称 */
 }
 
-/* 主列 */
-.main {
-  flex-grow: 2;
-  flex-basis: 400px;
-  background-color: white;
-  padding: 20px;
+.main{
+grid-area: main;
 }
+
 
 /* 伪图像，仅供示例 */
 .fakeimg {
@@ -81,16 +76,20 @@ body {
 
 /* 响应式布局 - 当屏幕小于 700 像素宽时，让两列堆叠而不是并排 */
 @media screen and (max-width: 700px) {
-  .row, .navbar {   
-    flex-direction: column;
+
+  /* 使用垂直堆叠布局 */
+  .row {
+    grid-template-areas:
+    "side"
+    "main";
+    gap: 0;
   }
+
 }
-
+  
 </style>
-
 </head>
 <body>
-
 
 <!-- Header -->
 <div class="header">
