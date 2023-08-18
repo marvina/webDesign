@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      font-size: 16px; /* 默认字体大小 */
+    }
+  </style>
+</head>
+<body>
+  <h1>网页内容标题</h1>
+  <p>这是一些网页内容。</p>
+
+  <button onclick="setFontSize('large')">大</button>
+  <button onclick="setFontSize('medium')">中</button>
+  <button onclick="setFontSize('small')">小</button>
+
+  <script>
+    function setFontSize(size) {
+      switch (size) {
+        case 'large':
+          document.body.style.fontSize = '20px';
+          break;
+        case 'medium':
+          document.body.style.fontSize = '16px';
+          break;
+        case 'small':
+          document.body.style.fontSize = '12px';
+          break;
+        default:
+          document.body.style.fontSize = '16px';
+          break;
+      }
+    }
+  </script>
+</body>
+</html>
